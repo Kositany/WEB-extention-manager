@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Browser Extenstions Manager</title>
+</head>
+
+<body>
+    <header>
+        <nav class="nav-logo-wrapper">
+            <ul role="list">
+                <li><img src="assets/images/logo.svg" alt="logo" aria-label="logo" class="site-logo"></li>
+                <li class="color-toggles">
+                    <button type="button" class="dark-mode-btn" onclick="toggleDarkMode()">
+                        <img src="assets/images/icon-moon.svg" alt="moon-icon" aria-label="toggle-dark-mode" class="moon-logo active">
+                    </button>
+                
+                    <button type="button" class="light-mode-btn" onclick="toggleLightMode()">
+                        <img src="assets/images/icon-sun.svg" alt="sun-logo" class="sun-logo">
+                    </button>
+                </li>
+
+            </ul>
+        </nav>
+    </header>
+
+<section class="extentions-status">
+    <h1>Extensions List</h1>
+    <ul role="list">
+        <li><button type="button" class="filter-btn display-all selected" onclick="displayAll(this)">All</button></li>
+        <li><button type="button" class="filter-btn active-extensions" onclick="displayActive(this)">Active</button>
+        </li>
+        <li><button type="button" class="filter-btn inactive-extensions"
+                onclick="displayInactive(this)">Inactive</button></li>
+    </ul>
+</section>
+
+
+    <main class="main-content">
+        <div class="grid-boxes">
+
+            <div class="grid-box">
+                <div class="logo-and-text">
+                    <div class="image">
+                        <img src="assets/images/logo-devlens.svg" alt="logo-devlens">
+                    </div>
+                    <div class="text-content">
+                        <h3>DevLens</h3>
+                        <p>Quickly inspect page layouts and visualize element boundaries.</p>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="remove-button" onclick="unToggle(this)">Remove</button>
+                    <div class="toggle-switch" onclick="toggleSwitch(this)">
+                        <div class="toggle-knob"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-box">
+                <div class="logo-and-text">
+                    <div class="image">
+                        <img src="assets/images/logo-style-spy.svg" alt="logo-style-spy">
+                    </div>
+                    <div class="text-content">
+                        <h3>StyleSpy</h3>
+                        <p>Instantly analyze and copy CSS from any webpage element.</p>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="remove-button" onclick="unToggle(this)">Remove</button>
+                    <div class="toggle-switch" onclick="toggleSwitch(this)">
+                        <div class="toggle-knob"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-box">
+                <div class="logo-and-text">
+                    <div class="image">
+                        <img src="assets/images/logo-speed-boost.svg" alt="logo-speed-boost">
+                    </div>
+                    <div class="text-content">
+                        <h3>SpeedBoost</h3>
+                        <p>Optimizes browser resource usage to accelarate page loading.</p>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="remove-button" onclick="unToggle(this)">Remove</button>
+                    <div class="toggle-switch" onclick="toggleSwitch(this)">
+                        <div class="toggle-knob"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-box">
+                <div class="logo-and-text">
+                    <div class="image">
+                        <img src="assets/images/logo-json-wizard.svg" alt="logo-json-wizard">
+                    </div>
+                    <div class="text-content">
+                        <h3>JSONWizard</h3>
+                        <p>Formats, validates, and prettiffies JSON responses in-browser.</p>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="remove-button" onclick="unToggle(this)">Remove</button>
+                    <div class="toggle-switch" onclick="toggleSwitch(this)">
+                        <div class="toggle-knob"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-box">
+                <div class="logo-and-text">
+                    <div class="image">
+                        <img src="assets/images/logo-tab-master-pro.svg" alt="logo-tab-master-pro">
+                    </div>
+                    <div class="text-content">
+                        <h3>TabMaster Pro</h3>
+                        <p>Organizes browser tabs into groups and sessions.</p> 
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="remove-button" onclick="unToggle(this)">Remove</button>
+                    <div class="toggle-switch" onclick="toggleSwitch(this)">
+                        <div class="toggle-knob"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-box">
+                <div class="logo-and-text">
+                    <div class="image">
+                        <img src="assets/images/logo-viewport-buddy.svg" alt="logo-viewport-buddy">
+                    </div>
+                    <div class="text-content">
+                        <h3>ViewportBuddy</h3>
+                        <p>Simulates various screen solutions directly within the browser.</p>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="remove-button" onclick="unToggle(this)">Remove</button>
+                    <div class="toggle-switch" onclick="toggleSwitch(this)">
+                        <div class="toggle-knob"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-box">
+                <div class="logo-and-text">
+                    <div class="image">
+                        <img src="assets/images/logo-markup-notes.svg" alt="logo-markup-notes">
+                    </div>
+                    <div class="text-content">
+                        <h3>Markup Notes</h3>
+                        <p>Enables annotaions directly onto webpages for collaborative debugging.</p>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="remove-button" onclick="unToggle(this)">Remove</button>
+                    <div class="toggle-switch" onclick="toggleSwitch(this)">
+                        <div class="toggle-knob"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-box">
+                <div class="logo-and-text">
+                    <div class="image">
+                        <img src="assets/images/logo-grid-guides.svg" alt="logo-grid-guides">
+                    </div>
+                    <div class="text-content">
+                        <h3>GridGuides</h3>
+                        <p>Overlay customizable grids and alignment guides on any webpage.</p>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="remove-button" onclick="unToggle(this)">Remove</button>
+                    <div class="toggle-switch" onclick="toggleSwitch(this)">
+                        <div class="toggle-knob"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-box">
+                <div class="logo-and-text">
+                    <div class="image">
+                        <img src="assets/images/logo-palette-picker.svg" alt="logo-palette-picker">
+                    </div>
+                    <div class="text-content">
+                        <h3>Pallete Picker</h3>
+                        <p>Instantly extracts color palettes from any webpage.</p>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="remove-button" onclick="unToggle(this)">Remove</button>
+                    <div class="toggle-switch" onclick="toggleSwitch(this)">
+                        <div class="toggle-knob"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-box">
+                <div class="logo-and-text">
+                    <div class="image">
+                        <img src="assets/images/logo-link-checker.svg" alt="LinkChecker">
+                    </div>
+                    <div class="text-content">
+                        <h3>LinkChecker</h3>
+                        <p>Scans and highlights broken links on any page.</p>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="remove-button" onclick="unToggle(this)">Remove</button>
+                    <div class="toggle-switch" onclick="toggleSwitch(this)">
+                        <div class="toggle-knob"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-box">
+                <div class="logo-and-text">
+                    <div class="image">
+                        <img src="assets/images/logo-dom-snapshot.svg" alt="logo-dom-snapshot">
+                    </div>
+                    <div class="text-content">
+                        <h3>DOM Snapshot</h3>
+                        <p>QCapture and export DOM structures quickly.</p>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="remove-button" onclick="unToggle(this)">Remove</button>
+                    <div class="toggle-switch" onclick="toggleSwitch(this)">
+                        <div class="toggle-knob"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-box">
+                <div class="logo-and-text">
+                    <div class="image">
+                        <img src="assets/images/logo-console-plus.svg" alt="ConsolePlus">
+                    </div>
+                    <div class="text-content">
+                        <h3>ConsolePlus</h3>
+                        <p>Enhanced devekoper console with advanced filtering and logging.</p>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="remove-button" onclick="unToggle(this)">Remove</button>
+                    <div class="toggle-switch" onclick="toggleSwitch(this)">
+                        <div class="toggle-knob"></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
